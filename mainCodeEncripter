@@ -1,32 +1,40 @@
-let texto = prompt("Ingresa el texto a encriptar:");
-let clave = parseInt(prompt("Ingresa la clave para el cifrado:"));
+<!DOCTYPE html>
+<html>
 
-let texto_encriptado = "";
+<head>
+    <title>Encriptación y Desencriptación</title>
+    <script>
+        function encriptar() {
+            var texto = document.getElementById("texto").value;
+            var resultado = "";
+            for (var i = 0; i < texto.length; i++) {
+                resultado += String.fromCharCode(texto.charCodeAt(i) + 2);
+            }
+            document.getElementById("resultado").value = resultado;
+        }
 
-for (let i = 0; i < texto.length; i++) {
-  let letra = texto[i];
-  if (letra.match(/[a-z]/i)) {
-    let ascii_letra = texto.charCodeAt(i);
-    ascii_letra += clave;
-    
-    if (texto[i] === texto[i].toUpperCase()) {
-      if (ascii_letra > 90) {
-        ascii_letra -= 26;
-      } else if (ascii_letra < 65) {
-        ascii_letra += 26;
-      }
-    } else {
-      if (ascii_letra > 122) {
-        ascii_letra -= 26;
-      } else if (ascii_letra < 97) {
-        ascii_letra += 26;
-      }
-    }
-    
-    texto_encriptado += String.fromCharCode(ascii_letra);
-  } else {
-    texto_encriptado += letra;
-  }
-}
+        function desencriptar() {
+            var texto = document.getElementById("resultado").value;
+            var resultado = "";
+            for (var i = 0; i < texto.length; i++) {
+                resultado += String.fromCharCode(texto.charCodeAt(i) - 2);
+            }
+            document.getElementById("texto").value = resultado;
+        }
+    </script>
+</head>
 
-console.log("El texto encriptado es:", texto_encriptado);
+<body>
+    <h1>Encriptación y Desencriptación</h1>
+    <label for="texto"><strong>Introduce el texto a encriptar/desencriptar:</strong></label>
+    <br>
+    <input type="text" id="texto\"><br><br>
+    <input type="button" onclick="encriptar()" value="Encriptar">
+    <input type="button" onclick="desencriptar()" value="Desencriptar">
+    <br><br>
+    <label for="resultado\"><strong>Resultado:</strong></label>
+    <br>
+    <input type="text" id="resultado">
+</body>
+
+</html>
