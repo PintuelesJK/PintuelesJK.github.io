@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <title>Encriptación y Desencriptación</title>
     <script>
         function encriptar() {
@@ -26,12 +27,14 @@
 
 <body>
     <h1>Encriptación y Desencriptación</h1>
+    <BR>
     <label for="texto"><strong>Introduce el texto a encriptar/desencriptar:</strong></label>
     <br>
     <input type="text" id="texto\"><br><br>
     <input type="button" onclick="encriptar()" value="Encriptar">
     <input type="button" onclick="desencriptar()" value="Desencriptar">
-    <br><br>
+    <br>
+    <br>
     <label for="resultado\"><strong>Resultado:</strong></label>
     <br>
     <input type="text" id="resultado">
