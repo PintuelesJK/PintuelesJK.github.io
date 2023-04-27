@@ -92,6 +92,34 @@ function desencriptarGruposDeTres() {
   document.getElementById("inputDesencriptado").value = strDesencriptado;
 }
 
+  let matrizCodigo = [
+    ["a", "sua"],
+    ["b", "eyu"],
+    ["c", "jvh"],
+    ["d", "nzl"],
+    ["e", "has"],
+    ["f", "kta"],
+    ["g", "idq"],
+    ["h", "wmc"],
+    ["i", "exk"],
+    ["j", "zdr"],
+    ["k", "cjz"],
+    ["l", "elk"],
+    ["m", "ich"],
+    ["n", "lct"],
+    ["ñ", "hzv"],
+    ["o", "qle"],
+    ["p", "hez"],
+    ["q", "quw"],
+    ["r", "ioq"],
+    ["s", "ioy"],
+    ["t", "akn"],
+    ['v', "sht"],
+    ["w", "npp"],
+    ["x", "lzs"],
+    ["y", "uaq"],
+    ["z", "wzc"],
+  ];
 
 
 
