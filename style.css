@@ -1,10 +1,4 @@
-*{
-    background-color: hsl(5, 6%, 58%);
-        background-image: repeating-linear-gradient(transparent, transparent 50px, rgba(0, 0, 0, .4) 50px, rgba(0, 0, 0, .4) 53px, transparent 53px, transparent 63px, rgba(0, 0, 0, .4) 63px, rgba(0, 0, 0, .4) 66px, transparent 66px, transparent 116px, rgba(0, 0, 0, .5) 116px, rgba(0, 0, 0, .5) 166px, rgba(255, 255, 255, .2) 166px, rgba(255, 255, 255, .2) 169px, rgba(0, 0, 0, .5) 169px, rgba(0, 0, 0, .5) 179px, rgba(255, 255, 255, .2) 179px, rgba(255, 255, 255, .2) 182px, rgba(0, 0, 0, .5) 182px, rgba(0, 0, 0, .5) 232px, transparent 232px),
-            repeating-linear-gradient(270deg, transparent, transparent 50px, rgba(0, 0, 0, .4) 50px, rgba(0, 0, 0, .4) 53px, transparent 53px, transparent 63px, rgba(0, 0, 0, .4) 63px, rgba(0, 0, 0, .4) 66px, transparent 66px, transparent 116px, rgba(0, 0, 0, .5) 116px, rgba(0, 0, 0, .5) 166px, rgba(255, 255, 255, .2) 166px, rgba(255, 255, 255, .2) 169px, rgba(0, 0, 0, .5) 169px, rgba(0, 0, 0, .5) 179px, rgba(255, 255, 255, .2) 179px, rgba(255, 255, 255, .2) 182px, rgba(0, 0, 0, .5) 182px, rgba(0, 0, 0, .5) 232px, transparent 232px),
-            repeating-linear-gradient(125deg, transparent, transparent 2px, rgba(0, 0, 0, .2) 2px, rgba(0, 0, 0, .2) 3px, transparent 3px, transparent 5px, rgba(0, 0, 0, .2) 5px);
-    
-}
+
 
 body{
 background-color: hsl(5, 6%, 58%);
@@ -21,6 +15,14 @@ background-color: hsl(5, 6%, 58%);
         text-shadow: #050505 0.1em 0.1em 0.2em;
     }
 
+.informacion{
+    font-family: Arial, Helvetica, sans-serif, ;
+        color: #fffdfd;
+        font-size: 40px;
+        font-style: italic;
+        text-shadow: #050505 0.1em 0.1em 0.2em;
+    }
+
 .text-area {
     width: 500px;
     height: 200px;
@@ -28,7 +30,17 @@ background-color: hsl(5, 6%, 58%);
     color: #0A3871;
     margin-top:10px;
     padding: 5px;
-    text-transform: lowercase;
+    box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.4);
+    resize: auto;
+}
+
+.mensaje {
+    width: 500px;
+    height: 200px;
+    border: none;
+    color: #0A3871;
+    margin-top: 10px;
+    padding: 5px;
     box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.4);
     resize: auto;
 }
@@ -40,7 +52,6 @@ background-color: hsl(5, 6%, 58%);
     color: #0A3871;
     margin-top: 10px;
     padding: 5px;
-    text-transform: lowercase;
     box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.4);
     resize: auto;
 }
