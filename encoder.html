@@ -6,34 +6,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptar y desencriptar</title>
-</head>
+    </head>
+    <style>
+    a{text-decoration: none;}
+    textarea{display:inline-block;}
+    mensaje{display:inline-block;}
+    </style>
 <center> 
 <body> 
-    <header>
-        <h1 class="title">Encriptar y desencriptar</h1>
-    </header>
+    <div>
+        <header>
+            <a href="mainPage.html">
+                <h1 class="title">Encriptar y desencriptar</h1>
+            </a>
+        </header>
+    </div>   
    <main>
-    <section>  
-        <textarea class="text-area" id="textoenc" cols="20" rows="10" placeholder="Ingrese el texto aqui."></textarea>
+    <div> 
         <div>
-            <h class="informacion">Solo letras minúsculas y sin acentos.</h>
+            <textarea class="text-area" id="textoenc" cols="20" rows="10" placeholder="Ingrese el texto aqui."></textarea>
+            <br>
+            <br>
+        </div>           
+        <div>
+            <br>
+            <br>
+            <button class="encriptar" onclick="encriptarTexto()">Encriptar</button>
+            <a href="decoder.html">
+                            <button class="desencriptar" onclick="desencriptarTexto()">Desncriptar</button>
+            </a>
+            <br>
+            <br>
         </div>
-        <br>
-        <br>
-        <button class="copiar" onclick="pegar()">Pegar</button>
-        <br>
-        <br>
-        <button class="encriptar" onclick="encriptarTexto()">Encriptar</button>
-        <button class="desencriptar" onclick="desencriptarTexto()">Desncriptar</button>        
-        </section>   
-    <section>
+    </div>   
+    <div>
         <textarea class="mensaje" cols="20" rows="10" placeholder="Texto encriptado."></textarea>
         <br>
         <br>
         <button class="copiar" onclick="copiar()">Copiar</button>
-    </section>
+    </div>
    </main>      
 </center>
-<script src="/script.js"></script>   
+<script src="/script3.js"></script>   
 </body>
 </html>

@@ -32,6 +32,8 @@ background-color: hsl(5, 6%, 58%);
     padding: 5px;
     box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.4);
     resize: auto;
+    font-size: 50px;
+    font-family:'Times New Roman', Times, serif
 }
 
 .mensaje {
@@ -43,6 +45,8 @@ background-color: hsl(5, 6%, 58%);
     padding: 5px;
     box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.4);
     resize: auto;
+    font-size: 50px;
+    font-family: 'Times New Roman', Times, serif
 }
 
 .textEncriptado {
