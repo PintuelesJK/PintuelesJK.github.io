@@ -5,8 +5,9 @@ const copia = document.querySelector(".copiar");
 
 
 
-function encriptarTexto() {
-  var palabra = document.getElementById("textoenc").value;
+function encriptarTexto()
+{
+  var palabra = document.getElementById( "textoenc" ).value;
   const mapping = {
     'a': 'sua',
     'b': 'eyu',
@@ -38,21 +39,26 @@ function encriptarTexto() {
   };
 
   var encrypt = "";
-  for (var i = 0; i < palabra.length; i++) {
-    var letter = palabra[i].toLowerCase();
-    if (mapping.hasOwnProperty(letter)) {
-      encrypt += mapping[letter];
-    } else {
+  for ( var i = 0; i < palabra.length; i++ )
+  {
+    var letter = palabra[ i ].toLowerCase();
+    if ( mapping.hasOwnProperty( letter ) )
+    {
+      encrypt += mapping[ letter ];
+    }
+    else
+    {
       encrypt += letter;
     }
   }
- document.getElementById("textoenc").value="";
+  document.getElementById( "textoenc" ).value = "";
 
- mensaje.value = encrypt;
+  mensaje.value = encrypt;
 }
 
-function desencriptarTexto() {
-  var palabra = document.getElementById("textoenc").value;
+function desencriptarTexto()
+{
+  var palabra = document.getElementById( "textoenc" ).value;
   const mapping = {
     'sua': 'a',
     'eyu': 'b',
@@ -79,34 +85,35 @@ function desencriptarTexto() {
     'sht': 'v',
     'npp': 'w',
     'lzs': 'x',
-    'uaq': 'y',    
+    'uaq': 'y',
     'wzc': 'z'
   };
 
   var dencrypt = "";
-  for (var i = 0; i < palabra.length; i+=3) {
-    var letter = palabra.slice(i, i+3).toLowerCase();
-    if (mapping.hasOwnProperty(letter)) {
-      dencrypt += mapping[letter];
-    } else {
+  for ( var i = 0; i < palabra.length; i += 3 )
+  {
+    var letter = palabra.slice( i, i + 3 ).toLowerCase();
+    if ( mapping.hasOwnProperty( letter ) )
+    {
+      dencrypt += mapping[ letter ];
+    }
+    else
+    {
       dencrypt += letter;
     }
   }
 
-  document.getElementById("textoenc").value="";
+  document.getElementById( "textoenc" ).value = "";
 
   mensaje.value = dencrypt;
 }
 
-function copiar(){
-    mensaje.select();
-    navigator.clipboard.writeText(mensaje.value)
-    mensaje.value = "";
-    alert("Texto Copiado")
+function copiar()
+{
+  mensaje.select();
+  navigator.clipboard.writeText( mensaje.value )
+  mensaje.value = "";
+  alert( "Texto Copiado" )
 }
-
-
-
-
  
     

@@ -18,7 +18,7 @@ background-color: hsl(5, 6%, 58%);
 .informacion{
     font-family: Arial, Helvetica, sans-serif, ;
         color: #fffdfd;
-        font-size: 40px;
+        font-size: 20px;
         font-style: italic;
         text-shadow: #050505 0.1em 0.1em 0.2em;
     }
@@ -106,7 +106,18 @@ background-color: hsl(5, 6%, 58%);
     opacity: 1.5;
 }
 
-
+.button {
+    color: #ffffff;
+    background-color: #292D3E;
+    border: 1px solid #1D9AF2;
+    border-radius: 4px;
+    padding: 0 25px;
+    cursor: pointer;
+    height: 36px;
+    font-size: 30px;
+    transition: all 0.2s ease-in-out;
+    opacity: 1.5;
+}
 
 
 
