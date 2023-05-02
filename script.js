@@ -2,12 +2,11 @@
 const textArea = document.querySelector(".text-area");
 const mensaje = document.querySelector(".mensaje");
 const copia = document.querySelector(".copiar");
-copia.style.display = "none"
 
 
 function validarTexto(){
-    let textoEscrito = document.querySelector(".text-area").value;
-    let validador = textoEscrito.match(/^[a-z]*$/);
+    let palabra = document.getElementById("textoenc").value;
+    let validador = palabra.match(/^[a-z]*$/);
 
     if(!validador || validador === 0) {
         alert("Solo son permitidas letras minúsculas y sin acentos")
@@ -16,121 +15,63 @@ function validarTexto(){
     }
 }
 
-
 function btnEncriptar(){
     if(!validarTexto()) {
-        const textoEncriptado = encriptarTexto(encrypt)
-        mensaje.value = textoEncriptado
-        mensaje.style.backgroundImage = "none"
-        textArea.value = "";
-        copia.style.display = "block"
-    
+         encriptarTexto()
     }
 }
 
-
-
-function encriptarTexto()
-{
-  var palabra = document.getElementById( "textoenc" ).value;
-  const mapping = {
-    'a': 'sua',
-    'b': 'eyu',
-    'c': 'jvh',
-    'd': 'nzl',
-    'e': 'has',
-    'f': 'kta',
-    'g': 'idq',
-    'h': 'wmc',
-    'i': 'exk',
-    'j': 'zdr',
-    'k': 'cjz',
-    'l': 'elk',
-    'm': 'ich',
-    'n': 'lct',
-    'ñ': 'hzv',
-    'o': 'qle',
-    'p': 'hez',
-    'q': 'quw',
-    'r': 'ioq',
-    's': 'ioy',
-    't': 'akn',
-    'u': 'qvn',
-    'v': 'sht',
-    'w': 'npp',
-    'x': 'lzs',
-    'y': 'uaq',
-    'z': 'wzc'
+function encriptarTexto() {
+  const encodeMatrix = {
+    "e": "enter",
+    "i": "imes",
+    "a": "ai",
+    "o": "ober",
+    "u": "ufat",
   };
+  const palabra = document.getElementById("textoenc").value;
+  let resultado = "";
+  
+  for (let letra of palabra.toLowerCase().split('')) {
+    const substitution = encodeMatrix[letra];
 
-  var encrypt = "";
-  for ( var i = 0; i < palabra.length; i++ )
-  {
-    var letter = palabra[ i ].toLowerCase();
-    if ( mapping.hasOwnProperty( letter ) )
-    {
-      encrypt += mapping[ letter ];
-    }
-    else
-    {
-      encrypt += letter;
+    if (substitution) {
+      resultado += substitution;
+    } else {
+      resultado += letra;
     }
   }
-  document.getElementById( "textoenc" ).value = "";
 
-  mensaje.value = encrypt;
+  document.getElementById("textoenc").value = "";
+  mensaje.value = resultado;
 }
 
-function desencriptarTexto()
-{
-  var palabra = document.getElementById( "textoenc" ).value;
-  const mapping = {
-    'sua': 'a',
-    'eyu': 'b',
-    'jvh': 'c',
-    'nzl': 'd',
-    'has': 'e',
-    'kta': 'f',
-    'idq': 'g',
-    'wmc': 'h',
-    'exk': 'i',
-    'zdr': 'j',
-    'cjz': 'k',
-    'elk': 'l',
-    'ich': 'm',
-    'lct': 'n',
-    'hzv': 'ñ',
-    'qle': 'o',
-    'hez': 'p',
-    'quw': 'q',
-    'ioq': 'r',
-    'ioy': 's',
-    'akn': 't',
-    'qvn': 'u',
-    'sht': 'v',
-    'npp': 'w',
-    'lzs': 'x',
-    'uaq': 'y',
-    'wzc': 'z'
+function desencriptarTexto() {
+  const encodeMatrix = {
+    "enter": "e",
+    "imes": "i",
+    "ai": "a",
+    "ober": "o",
+    "ufat": "u",
   };
+  const palabra = document.getElementById("textoenc").value;
+  let resultado = "";
 
-  var dencrypt = "";
-  for ( var i = 0; i < palabra.length; i += 3 )
-  {
-    var letter = palabra.slice( i, i + 3 ).toLowerCase();
-    if ( mapping.hasOwnProperty( letter ) )
-    {
-      dencrypt += mapping[ letter ];
-    }
-    else
-    {
-      dencrypt += letter;
+  for (let i = 0; i < palabra.length; i++) {
+    let actual = palabra.substring(i);
+    for (let key in encodeMatrix) {
+      if (actual.indexOf(key) === 0) {
+        resultado += encodeMatrix[key];
+        i += key.length - 1;
+        break;
+      } else if (key === Object.keys(encodeMatrix)[Object.keys(encodeMatrix).length - 1]) {
+        resultado += actual.charAt(0);
+      }
     }
   }
 
-  document.getElementById( "textoenc" ).value = "";
-
-  mensaje.value = dencrypt;
+  document.getElementById("textoenc").value = "";
+  mensaje.value = resultado;
 }
 
 function copiar()
@@ -138,7 +79,6 @@ function copiar()
   mensaje.select();
   navigator.clipboard.writeText( mensaje.value )
   mensaje.value = "";
- 
 }
- 
+
     
