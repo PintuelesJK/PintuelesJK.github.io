@@ -5,86 +5,58 @@ const copia = document.querySelector(".copiar");
 copia.style.display = "none"
 
 
-
-
-
-function encriptarTexto()
-{
+function encodeText() {
+  
+  const substitutionMatrix = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
   var palabra = document.getElementById( "textoenc" ).value;
-  let encodeMatriz = {
-    "e": "enter", 
-    "i": "imes", 
-    "a": "ai", 
-    "o": "ober",
-    "u": "ufat",
-  }
-  for (encodeMatriz in palabra)
-  if (palabra === encodeMatriz){
-    encodeMatriz.push(palabra[encodeMatriz])
+  
+  for ( Letra of palabra.toLowerCase().split('') ) {
+    const letra = Letra;  
+    const indiceSubstitucion = substitutionMatrix.indexOf(letra);
+
+    if (indiceSubstitucion < 0) {
+      return letra;
+    }
+
+    return substitutionMatrix[indiceSubstitucion][1];
   }
   document.getElementById( "textoenc" ).value = "";
 
-  mensaje.value = textEncrypted ;
+  mensaje.value = encrypt;
 }
 
-function desencriptarTexto()
-{
-  var palabra = document.getElementById( "textoenc" ).value;
-  const mapping = {
-    'sua': 'a',
-    'eyu': 'b',
-    'jvh': 'c',
-    'nzl': 'd',
-    'has': 'e',
-    'kta': 'f',
-    'idq': 'g',
-    'wmc': 'h',
-    'exk': 'i',
-    'zdr': 'j',
-    'cjz': 'k',
-    'elk': 'l',
-    'ich': 'm',
-    'lct': 'n',
-    'hzv': 'ñ',
-    'qle': 'o',
-    'hez': 'p',
-    'quw': 'q',
-    'ioq': 'r',
-    'ioy': 's',
-    'akn': 't',
-    'qvn': 'u',
-    'sht': 'v',
-    'npp': 'w',
-    'lzs': 'x',
-    'uaq': 'y',
-    'wzc': 'z'
-  };
+console.log(encodeText('hola'));
 
-  var dencrypt = "";
-  for ( var i = 0; i < palabra.length; i += 3 )
-  {
-    var letter = palabra.slice( i, i + 3 ).toLowerCase();
-    if ( mapping.hasOwnProperty( letter ) )
-    {
-      dencrypt += mapping[ letter ];
-    }
-    else
-    {
-      dencrypt += letter;
+
+//  sss
+
+function decodeText() {
+ 
+  const substitutionMatrix = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+  var palabra = document.getElementById( "textoenc" ).value;
+  
+  const textoDesencriptado = '';
+  for ( Letra of palabra.toLowerCase().split('') ) {
+    const letra = Letra;
+    
+    const indiceSubstitucion = substitutionMatrix.indexOf(letra);
+
+    
+    if (indiceSubstitución < 0) {
+      textoDesencriptado += letra;
+    } 
+
+    else {
+      textoDesencriptado += substitutionMatrix[indiceSubstitucion][1];
     }
   }
+
 
   document.getElementById( "textoenc" ).value = "";
 
   mensaje.value = dencrypt;
 }
 
-function copiar()
-{
-  mensaje.select();
-  navigator.clipboard.writeText( mensaje.value )
-  mensaje.value = "";
- 
-}
- 
+
+
     
