@@ -6,7 +6,7 @@ const copia = document.querySelector(".copiar");
 
 function validarTexto(){
     let palabra = document.getElementById("textoenc").value;
-    let validador = palabra.match(/^[a-z]*$/);
+    let validador = palabra.match(/^[a-z ]*$/);
 
     if(!validador || validador === 0) {
         alert("Solo son permitidas letras minúsculas y sin acentos")
